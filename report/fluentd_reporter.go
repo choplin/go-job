@@ -32,7 +32,8 @@ type fluentdReporter struct {
 	stdout      chan string
 	stderr      chan string
 
-	// for notification with hipchat
+	// buf stores stringReporter result. This is useful when you want to send notification
+	// with other tool such as hipchat.
 	buf *bytes.Buffer
 	sr  *stringReporter
 }
